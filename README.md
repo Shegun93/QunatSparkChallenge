@@ -80,10 +80,11 @@ This project demonstrates a reproducible training workflow, model artifacts, and
 
 ```
 ## Getting Started
-### Clone github Repo
+### Clone GitHub Repo
 ```
-git clone
-### Requirements
+git clone https://github.com/Shegun93/QunatSparkChallenge.git
+```
+### Install Requirements
 
 Install dependencies:
 
@@ -101,6 +102,11 @@ Dependencies include:
 - pydantic
 - mlflow
 - joblib
+
+### Navigate to the source code folder
+```
+cd QunatSparkChallenge
+```
 ## Training
 
 Train the model using the CLI:
