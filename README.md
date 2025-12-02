@@ -21,8 +21,10 @@ This project demonstrates a reproducible training workflow, model artifacts, and
 
 Install dependencies:
 
-```bash
+```
 pip install -r requirements.txt
-Training
+```
+
+## Training
 
 Train the model using the CLI:
