@@ -105,3 +105,11 @@ Train the model using the CLI:
 ```
 python train.py --seed 42 --test-size 0.2 --model lReg --C 1.0
 ```
+Parameters:
+- --seed: Random seed for reproducibility
+- --test-size: Fraction of dataset used as test set
+- --model: "lReg" (Logistic Regression) or "randF" (Random Forest)
+- --C: Regularization parameter for Logistic Regression
+- --n-estimators: Number of trees for Random Forest
+
+Training will save artifacts in the artifacts/ folder and log the run in MLflow.
