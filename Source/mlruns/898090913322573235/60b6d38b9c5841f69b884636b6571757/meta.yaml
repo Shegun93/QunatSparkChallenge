@@ -1,0 +1,14 @@
+artifact_uri: file:///home/shegun93/QuankSpark/Source/mlruns/898090913322573235/60b6d38b9c5841f69b884636b6571757/artifacts
+end_time: 1764686892474
+entry_point_name: ''
+experiment_id: '898090913322573235'
+lifecycle_stage: active
+run_id: 60b6d38b9c5841f69b884636b6571757
+run_name: lReg_20251202_144806
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1764686887129
+status: 3
+tags: []
+user_id: shegun93
