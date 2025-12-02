@@ -11,8 +11,11 @@ This project demonstrates a reproducible training workflow, model artifacts, and
 - [Project Structure](#Strcuture)
 - [Training](#training)  
 - [Artifacts](#artifacts)  
-- [Serving the Model](#serving-the-model)  
-- [API Usage](#api-usage)  
+- [Serving the Model](#serving-the-model)
+- [model version mflow](#mlflow-tracking)
+- [Docker](#Run-via-Dockerr)
+- [API Usage](#api-usage)
+- [Notes](#Notes)
 
 ---
 
@@ -139,6 +142,31 @@ Start the FastAPI server:
 ```
 uvicorn serve:app --host 0.0.0.0 --port 8000
 ```
+## mlflow tracking
+
+During training, the script logs parameters and metrics to MLflow in addition to saving JSON artifacts.  
+
+- Parameters logged: seed, test size, model type, hyperparameters  
+- Metrics logged: accuracy, macro F1  
+- Artifacts logged: trained model, metrics, confusion matrix  
+
+You can visualize experiment runs by starting the MLflow UI:
+
+```bash
+mlflow ui
+```
+P.S.: A real-life scenario would see that we set up a remote server for tracking
+
+## Run via Docker
+### Build image
+```
+docker build -t iris-ml-api .
+```
+### Run Container
+```
+docker run -p 8000:8000 iris-ml-api
+
+```
 ## API Usage
 Health Check
 ```
@@ -174,3 +202,20 @@ Response
 }
 
 ```
+## Notes
+- Model Choice: Logistic Regression and Random Forest were selected for their simplicity, interpretability, and strong performance on small datasets like Iris. Logistic Regression is fast and interpretable, while Random Forest offers better robustness to feature interactions.  
+- Metrics: Accuracy and Macro F1 were chosen to evaluate overall classification performance and the balance between classes.  
+- Trade-offs: Logistic Regression provides interpretability and speed, but may underperform on non-linear patterns. Random Forest is more complex and slower but captures non-linear relationships better. For production, the trade-off is between simplicity (faster deployment) and performance (higher predictive power).  
+
+### Reproducibility & Artifact Management
+- All training runs are deterministic using a configurable random seed.  
+- CLI arguments are saved in `artifacts/params.json`.  
+- Model pipeline (`scaler + classifier`) is saved in `artifacts/model.joblib`.  
+- Metrics and confusion matrices are saved as JSON (`artifacts/metrics.json`, `artifacts/confusion_matrix.json`).  
+- MLflow logs parameters, metrics, and artifacts for experiment tracking.  
+
+### Logging
+- Key training and inference information is logged: model type, hyperparameters, metrics, and request-level logs for predictions.  
+- Inference API provides unique request IDs and latency for traceability and monitoring.  
+
+
