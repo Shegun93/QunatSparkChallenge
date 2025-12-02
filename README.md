@@ -113,6 +113,18 @@ Parameters:
 - --n-estimators: Number of trees for Random Forest
 
 Training will save artifacts in the artifacts/ folder and log the run in MLflow.
+## Artifacts
+
+After training, the following artifacts are saved:
+
+| File | Description |
+|------|-------------|
+| `artifacts/model.joblib` | Fitted scikit-learn pipeline (scaler + model) |
+| `artifacts/metrics.json` | Test set accuracy and macro F1 |
+| `artifacts/params.json` | CLI parameters used during training |
+| `artifacts/confusion_matrix.json` | Confusion matrix (per-class) |
+| `artifacts/confusion_matrix.png` | Visual representation of confusion matrix |
+
 ## Serving the Model
 
 Start the FastAPI server:
