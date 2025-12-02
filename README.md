@@ -12,7 +12,8 @@ This project demonstrates a reproducible training workflow, model artifacts, and
 - [Training](#training)  
 - [Artifacts](#artifacts)  
 - [Serving the Model](#serving-the-model)
-- [model version mflow](#mlflow-tracking) 
+- [model version mflow](#mlflow-tracking)
+- [Docker](#Run-via-Dockerr)
 - [API Usage](#api-usage)
 - [Notes](#Notes)
 
@@ -154,7 +155,18 @@ You can visualize experiment runs by starting the MLflow UI:
 ```bash
 mlflow ui
 ```
-P.S.: A real-life scenario would see that we set up a remote server for tracking 
+P.S.: A real-life scenario would see that we set up a remote server for tracking
+
+## Run via Docker
+### Build image
+```
+docker build -t iris-ml-api .
+```
+### Run Container
+```
+docker run -p 8000:8000 iris-ml-api
+
+```
 ## API Usage
 Health Check
 ```
