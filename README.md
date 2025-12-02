@@ -87,6 +87,10 @@ This project demonstrates a reproducible training workflow, model artifacts, and
 ```
 git clone https://github.com/Shegun93/QunatSparkChallenge.git
 ```
+### Navigate to the source code folder
+```
+cd QunatSparkChallenge
+```
 ### Install Requirements
 
 Install dependencies:
@@ -106,14 +110,11 @@ Dependencies include:
 - mlflow
 - joblib
 
-### Navigate to the source code folder
-```
-cd QunatSparkChallenge
-```
-## Training
 
-Train the model using the CLI:
+## Training
+Navigate to the source code folder and train the model using the CLI:
 ```
+cd Source
 python train.py --seed 42 --test-size 0.2 --model lReg --C 1.0
 ```
 Parameters:
