@@ -116,5 +116,6 @@ Training will save artifacts in the artifacts/ folder and log the run in MLflow.
 ## Serving the Model
 
 Start the FastAPI server:
-```uvicorn serve:app --host 0.0.0.0 --port 8000
+```
+uvicorn serve:app --host 0.0.0.0 --port 8000
 ```
