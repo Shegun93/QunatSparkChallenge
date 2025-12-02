@@ -23,3 +23,6 @@ Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+Training
+
+Train the model using the CLI:
