@@ -189,3 +189,20 @@ Response
 }
 
 ```
+## Notes
+- Model Choice: Logistic Regression and Random Forest were selected for their simplicity, interpretability, and strong performance on small datasets like Iris. Logistic Regression is fast and interpretable, while Random Forest offers better robustness to feature interactions.  
+- Metrics: Accuracy and Macro F1 were chosen to evaluate overall classification performance and the balance between classes.  
+- Trade-offs: Logistic Regression provides interpretability and speed, but may underperform on non-linear patterns. Random Forest is more complex and slower but captures non-linear relationships better. For production, the trade-off is between simplicity (faster deployment) and performance (higher predictive power).  
+
+## Reproducibility & Artifact Management
+- All training runs are deterministic using a configurable random seed.  
+- CLI arguments are saved in `artifacts/params.json`.  
+- Model pipeline (`scaler + classifier`) is saved in `artifacts/model.joblib`.  
+- Metrics and confusion matrices are saved as JSON (`artifacts/metrics.json`, `artifacts/confusion_matrix.json`).  
+- MLflow logs parameters, metrics, and artifacts for experiment tracking.  
+
+## Logging
+- Key training and inference information is logged: model type, hyperparameters, metrics, and request-level logs for predictions.  
+- Inference API provides unique request IDs and latency for traceability and monitoring.  
+
+
