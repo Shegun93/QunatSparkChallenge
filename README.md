@@ -12,7 +12,7 @@ This project demonstrates a reproducible training workflow, model artifacts, and
 - [Training](#training)  
 - [Artifacts](#artifacts)  
 - [Serving the Model](#serving-the-model)
-- [model version mflow](#mlflow) 
+- [model version mflow](#mlflow-tracking) 
 - [API Usage](#api-usage)  
 
 ---
@@ -140,12 +140,20 @@ Start the FastAPI server:
 ```
 uvicorn serve:app --host 0.0.0.0 --port 8000
 ```
-## mlflow
-```
+## mlflow tracking
+
+During training, the script logs parameters and metrics to MLflow in addition to saving JSON artifacts.  
+
+- Parameters logged: seed, test size, model type, hyperparameters  
+- Metrics logged: accuracy, macro F1  
+- Artifacts logged: trained model, metrics, confusion matrix  
+
+You can visualize experiment runs by starting the MLflow UI:
+
+```bash
 mlflow ui
 ```
-Running that on the terminal would open the mflow ui
-Real-life. It would be a remote server so that all team members can view and easily accessible for all. 
+P.S.: A real-life scenario would see that we set up a remote server for tracking 
 ## API Usage
 Health Check
 ```
