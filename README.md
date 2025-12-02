@@ -119,3 +119,38 @@ Start the FastAPI server:
 ```
 uvicorn serve:app --host 0.0.0.0 --port 8000
 ```
+## API Usage
+Health Check
+```
+curl http://localhost:8000/health
+```
+Expected Response
+```
+{
+  "status": "ok"
+}
+## Prediction Example
+
+Test the prediction endpoint with `curl`:
+
+```bash
+curl -X POST http://localhost:8000/predict \
+-H "Content-Type: application/json" \
+-d '{"sepal_length":5.1,"sepal_width":3.5,"petal_length":1.4,"petal_width":0.2}'
+
+```
+Response
+```
+{
+  "predicted_species": "setosa",
+  "class_probabilities": {
+    "setosa": 0.9808,
+    "versicolor": 0.0192,
+    "virginica": 0.00000027
+  },
+  "latency_ms": 3.063,
+  "model_version": "cec9b682",
+  "request_id": "babfea39-4c47-4c87-b90f-3f37c3ea1319"
+}
+
+```
