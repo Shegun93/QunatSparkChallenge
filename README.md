@@ -12,7 +12,7 @@ This project demonstrates a reproducible training workflow, model artifacts, and
 - [Training](#training)  
 - [Artifacts](#artifacts)  
 - [Serving the Model](#serving-the-model)
-- [model version mflow](#mflow) 
+- [model version mflow](#mlflow) 
 - [API Usage](#api-usage)  
 
 ---
