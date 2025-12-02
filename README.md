@@ -80,6 +80,9 @@ This project demonstrates a reproducible training workflow, model artifacts, and
 
 ```
 ## Getting Started
+### Clone github Repo
+```
+git clone
 ### Requirements
 
 Install dependencies:
@@ -98,7 +101,6 @@ Dependencies include:
 - pydantic
 - mlflow
 - joblib
-  
 ## Training
 
 Train the model using the CLI:
