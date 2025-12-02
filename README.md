@@ -11,7 +11,8 @@ This project demonstrates a reproducible training workflow, model artifacts, and
 - [Project Structure](#Strcuture)
 - [Training](#training)  
 - [Artifacts](#artifacts)  
-- [Serving the Model](#serving-the-model)  
+- [Serving the Model](#serving-the-model)
+- [model version mflow](#mflow) 
 - [API Usage](#api-usage)  
 
 ---
@@ -139,6 +140,12 @@ Start the FastAPI server:
 ```
 uvicorn serve:app --host 0.0.0.0 --port 8000
 ```
+## mlflow
+```
+mlflow ui
+```
+Running that on the terminal would open the mflow ui
+Real-life. It would be a remote server so that all team members can view and easily accessible for all. 
 ## API Usage
 Health Check
 ```
